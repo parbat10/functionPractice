@@ -34,36 +34,31 @@ function updateButton(){
 
 
 
-    let timeoutId ;
+   let messages = 2 ;
+let intervalId;
+let isDisplayingNotification;
 
-function addToCart(){
-    const paragraph = document.querySelector('.js-paragraph');
-    paragraph.innerHTML = 'added';
+displayNotification();
 
-    clearTimeout(timeoutId);
-
-    timeoutId =setTimeout(function(){
-        paragraph.innerHTML='';
-    },2000);
+function displayNotification(){
+    if(isDisplayingNotification){
+        return;
+    }
 }
+isDisplayingNotification = true;
 
-
-
-let message = 0 ;
-function addButton(){
-    message++;
-};
-
-function removeButton(){
-    message--;
-};
-
-
-setInterval(function() {
+intervalId = setInterval(function() {
     if(document.title === 'App'){
-        document.title = `(${message}) messages`
+        document.title = `(${messages}) messages`
     }else{
         document.title = 'App'
     }
     
 }, 1000);
+
+function stopNotification(){
+    isDisplayingNotification = false;
+
+    clearInterval(intervalId);
+    document.title = 'App';
+}
