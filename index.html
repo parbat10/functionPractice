@@ -12,8 +12,17 @@
     <div class="js-paragraph"></div>
 
     <p>add or remove messages</p>
-    <button onclick="message++">add</button>
-    <button onclick="message--;">remove</button>
+    <button onclick="messages++;
+    displayNotification();">add</button>
+    <button onclick="
+    if (messages > 0) {
+        messages--;
+        if (messages === 0) {
+          stopNotification();
+        }
+      }
+    ">remove</button>
+    
     
     
     
