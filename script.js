@@ -7,7 +7,7 @@ add();
 function runTwice(fun){
     fun();
     fun();
-}
+};
 runTwice( function(){
     console.log('12b');
 });
@@ -30,7 +30,7 @@ function updateButton(){
     setTimeout(function(){
         button.innerHTML='click'
     },7000);
-}
+};
 
 
 
@@ -44,7 +44,7 @@ function displayNotification(){
     if(isDisplayingNotification){
         return;
     }
-}
+};
 isDisplayingNotification = true;
 
 intervalId = setInterval(function() {
@@ -61,4 +61,4 @@ function stopNotification(){
 
     clearInterval(intervalId);
     document.title = 'App';
-}
+};
